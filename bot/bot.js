@@ -4,7 +4,7 @@ import {repliesEN, repliesRU} from "./replies/replies.js" // message repelies
 import connection from "./database/connection.js" //mongodb connect
 import {session} from "telegraf-session-mongoose" //tg session to database
 import './botWorker.js' //parsing for each vk goroup to every tg group
-import env from '../env.js' //environment
+import env from '../env/env.js' //environment
 
 // caution advised! ugly code ahead!
 
