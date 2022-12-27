@@ -1,19 +1,12 @@
 import mongoose from "mongoose"
-
-const conn = mongoose.createConnection('mongodb+srv://yur0n:786512@cluster0.0na8y.mongodb.net/telegram?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    maxPoolSize: 10,
-    // useCreateIndex: true,
-    // useFindAndModify: false
-})
+import connection from "../database/connection.js"
 
 const schema = new mongoose.Schema({
     key: 'string',
     data: {},
 })
 
-const Session = conn.model('Session', schema)
+const Session = connection.model('Session', schema)
 
 export default Session
 

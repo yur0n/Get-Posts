@@ -2,13 +2,6 @@ import axios from 'axios'
 import Sessions from './models/sessions.js'
 import Lastpost from './models/lastPost.js'
 
-// const bot = '5943964873:AAHiO7fSt4ia69HJ8GEHFt-kJHAR7sr6hHU' 
-// const access_token = 'vk1.a.-BloNcGlTuZAZHLHx6RXl-yCjanlCOkRCeybLdz59bILKDbueQgba4vSl8uLdpfsyXYymth4tpHt7q7dqmKO8onJFsgpm_mEOsJNwYXC-WEGIncwS8OOuZY0BNIt5VzypY5e4H-bUu_tzWToPGBpufhYxt90YtrbbIixyJhsSKy61gRWaB-SBR0jFnEygOlp5dKUMWLmY66sZ85-LaLdhA'
-// const domain = 'sunnypyongyang' // VK group address 
-// const chat_id = '-1001670917181'
-
-
-let postId = 0
 async function parserVK(domain, bot, access_token, chat_id) {
     axios.get("https://api.vk.com/method/wall.get", {
         params: {
@@ -114,4 +107,4 @@ async function work() {
 
 
 
-setInterval(work, 5000)
+setInterval(work, 600000)

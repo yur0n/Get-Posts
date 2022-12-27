@@ -1,8 +1,17 @@
 import mongoose from "mongoose"
+import env from "../../env/env.js"
 
 mongoose.set('strictQuery', false)
 
-export default mongoose.connect('mongodb+srv://yur0n:786512@cluster0.0na8y.mongodb.net/telegram?retryWrites=true&w=majority', {
+export default mongoose.createConnection(env.DB_CONNECTION, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // dbName: 'telegram',
+    // useCreateIndex: true,
+    // useFindAndModify: false
+})
+
+mongoose.connect(env.DB_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // dbName: 'telegram',

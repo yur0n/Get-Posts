@@ -1,21 +1,21 @@
 import axios from "axios"
 import { Telegraf, Markup, Scenes } from 'telegraf' // bot api   //regex for bot token check: /^[0-9]{8,10}:[a-zA-Z0-9_-]{35}$/
 import {repliesEN, repliesRU} from "./replies/replies.js" // message repelies 
-import connection from "./database/connection.js" //mongodb connect
+import "./database/connection.js" //mongodb connect for telegraf sessions
 import {session} from "telegraf-session-mongoose" //tg session to database
 import './botWorker.js' //parsing for each vk goroup to every tg group
 import env from '../env/env.js' //environment
 
 // caution advised! ugly code ahead!
 
-const bot = new Telegraf(env.token) // this bot token
+const bot = new Telegraf(env.BOT_TOKEN) // this bot token
 bot.use(session({ collectionName: 'sessions' })); //middlewares
 bot.use((ctx, next) => {  // Save language in the state
   if (ctx.message && ctx.message.from.language_code == 'ru' ) ctx.state.reply = repliesRU
   else ctx.state.reply = repliesEN
   return next()
 })
-const vkAuthLink = (ctx) => `https://oauth.vk.com/authorize?client_id=51504694&display=mobile&redirect_uri=https://notsite.ml/tg&scope=offline&response_type=code&v=5.131&state=${ctx.from.id}:${ctx.chat.id}`
+const vkAuthLink = (ctx) => `https://oauth.vk.com/authorize?client_id=${env.VK_APP_ID}&display=mobile&redirect_uri=https://notsite.ml/tg&scope=offline&response_type=code&v=5.131&state=${ctx.from.id}:${ctx.chat.id}`
 
 const botScene = new Scenes.WizardScene(
   'BOTS_SCENE',
@@ -307,9 +307,9 @@ bot.hears(/^[0-9]{8,10}:[a-zA-Z0-9_-]{35}$/, async (ctx) =>{
 })
 
 bot.catch((err, ctx) => {
+  console.log(err)
   ctx.reply(ctx.state.reply.wrong)
   console.log(`Error for ${ctx.updateType} \nDetails:`)
-  console.log(err)
 })
 
 bot.launch();
