@@ -87,7 +87,6 @@ async function parserVK(domain, bot, access_token, chat_id) {
 async function work() {
     let users = await Sessions.find()
     if (!users) return
-    console.log(users)
     users.forEach(user => {
         if (!user.data.bots || !user.data.access_tokenVK) return
         let access_tokenVK = user.data.access_tokenVK
