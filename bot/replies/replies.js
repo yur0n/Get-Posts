@@ -1,11 +1,11 @@
 const repliesEN = {
     "start": "Get Posts can send new posts from VK",
-    "start2": "In order to use Get Posts you must create your bot that will be an admin of your channels and chats. What should you do:\n\n"+
+    "start2": "To use Get Posts you must create your bot that will be an admin of your channels and chats. What should you do:\n\n"+
                 "1. Run @BotFather and send /newbot command to him\n"+
                 "2. Enter bot name (can be anything, like: Bot Editor)\n"+
                 "3. Enter bot login — which ends with bot — like: mysuperbot\n"+
                 "4. With previous steps done, @BotFather will send you a message which contains <b>TOKEN</b> — key of your bot — click the TOKEN to copy it and send it to this chat.\n"+
-                "\nMake your bot an admin of your channel so he can send messages to the channel. After that write any message in your channel, feel free to delete it right away (this action is mandatory because the bot needs to be aware he's in the chat).\n\n"+
+                "\nMake your bot an admin of your channel so he can send messages to the channel. Write any message in your channel, feel free to delete it right away (this action is mandatory because the bot needs to be aware he's in the chat).\n\n"+
                 "<b>The bot you connect here should not be used by other services!</b>",
     "start3": "\n\n<b>Wait a bit and press OK after adding bot.</b>",
     "groups": 'You can have up to 5 groups connected to 1 bot.\n\nSend me link to the group you want to add and <b>press OK</b>.\n\n<b>Example:</b> https://vk.com/RandomGroup2h2',
