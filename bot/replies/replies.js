@@ -5,11 +5,11 @@ const repliesEN = {
                 "2. Enter bot name (can be anything, like: Bot Editor)\n"+
                 "3. Enter bot login — which ends with bot — like: mysuperbot\n"+
                 "4. With previous steps done, @BotFather will send you a message which contains <b>TOKEN</b> — key of your bot — click the TOKEN to copy it and send it to this chat.\n"+
-                "\nMake your bot is an admin of your channel so he could send messages to the channel. After that write any message in your channel, you can delete it right away (this action is mandatory because bot needs to be aware he's in the chat).\n\n"+
+                "\nMake your bot an admin of your channel so he can send messages to the channel. After that write any message in your channel, feel free to delete it right away (this action is mandatory because the bot needs to be aware he's in the chat).\n\n"+
                 "<b>The bot you connect here should not be used by other services!</b>",
     "start3": "\n\n<b>Wait a bit and press OK after adding bot.</b>",
     "groups": 'You can have up to 5 groups connected to 1 bot.\n\nSend me link to the group you want to add and <b>press OK</b>.\n\n<b>Example:</b> https://vk.com/RandomGroup2h2',
-    "channels": 'You can have up to 5 Telegram channels connected to 1 bot.\n\nSend me link to the Telegram channel where your bot is an admin and <b>press OK</b>.\n\n<b>Example:</b> https://t.me/RandomTGChannel',
+    "channels": 'You can have up to 5 Telegram channels connected to 1 bot.\n\nSend me a link to the Telegram channel where your bot is an admin and <b>press OK</b>.\n\n<b>Example:</b> https://t.me/RandomTGChannel',
     "groupsList": 'List of groups for this bot.\n\nChoose group to DELETE:',
     "channelsList": 'List of channels for this bot.\n\nChoose channel to DELETE:',
     "botDel": 'You are going to delete this bot!',
@@ -26,7 +26,7 @@ const repliesEN = {
     "alreadyBot": 'You have added this bot already',
     "alreadyGroup": 'You have added this group already',
     "alreadyChannel": 'You have added this channel already',
-    "botLimit": "You can't add more then 4 bots",
+    "botLimit": "You can't add more than 4 bots",
     "groupLimit": "You can't add more to this bot",
     "botAdd": "Bot added!",
     "groupAdd": 'Group added!',
