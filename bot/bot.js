@@ -15,7 +15,7 @@ bot.use((ctx, next) => {  // Save language in the state
   else ctx.state.reply = repliesEN
   return next()
 })
-const vkAuthLink = (ctx) => `https://oauth.vk.com/authorize?client_id=${env.VK_APP_ID}&display=mobile&redirect_uri=https://yuron.xyz/tg&scope=offline&response_type=code&v=5.131&state=${ctx.from.id}:${ctx.chat.id}`
+const vkAuthLink = (ctx) => `https://oauth.vk.com/authorize?client_id=${env.VK_APP_ID}&display=mobile&redirect_uri=https://yuron.xyz/api/tg&scope=offline&response_type=code&v=5.131&state=${ctx.from.id}:${ctx.chat.id}`
 
 const botScene = new Scenes.WizardScene(
   'BOTS_SCENE',
