@@ -10,4 +10,9 @@ export default mongoose.createConnection(env.DB_CONNECTION, {
     //useFindAndModify: false
 })
 
-mongoose.connect(env.DB_CONNECTION)
+mongoose.connect(env.DB_CONNECTION, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    //useCreateIndex: true,
+    //useFindAndModify: false
+})
