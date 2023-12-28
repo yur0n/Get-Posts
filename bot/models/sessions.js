@@ -1,14 +1,12 @@
 import mongoose from "mongoose"
-import connection from "../database/connection.js"
+import "../database/connection.js"
 
 const schema = new mongoose.Schema({
     key: 'string',
     data: {},
 })
 
-const Session = connection.model('Session', schema)
-
-export default Session
+export default mongoose.model('Session', schema)
 
 
     // user = new User({
