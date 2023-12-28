@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import connection from "../database/connection.js"
+import "../database/connection.js"
 
 const schema = new mongoose.Schema({
     domain: 'string',
