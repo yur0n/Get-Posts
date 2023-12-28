@@ -9,7 +9,7 @@ import env from '../env/env.js' //environment
 
 const bot = new Telegraf(env.BOT_TOKEN)
 
-bot.use(session());
+bot.use(session('session'));
 
 bot.use((ctx, next) => {  // Save language in the state
   if (ctx.message && ctx.message.from.language_code == 'ru' ) ctx.state.reply = repliesRU

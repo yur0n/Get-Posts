@@ -18,16 +18,16 @@ const getKey = ({ from, chat }) => {
     return `${from.id}:${chat.id}`;
 };
 
-export default () => {
+export default (name = 'user') => {
     const saveSession = (key, data) => collection.updateOne({ key }, { $set: { data } }, { upsert: true });
     const getSession = (key) => __awaiter(void 0, void 0, void 0, function* () { var _a, _b; return (_b = (_a = (yield collection.findOne({ key }))) === null || _a === void 0 ? void 0 : _a.data) !== null && _b !== void 0 ? _b : {}; });
     return (ctx, next) => __awaiter(void 0, void 0, void 0, function* () {
         const key = getKey(ctx);
         const data = key == null ? undefined : yield getSession(key);
-        ctx.session = data;
+        ctx[name] = data;
         yield next();
-        if (ctx.session != null) {
-            yield saveSession(key, ctx.session);
+        if (ctx[name] != null) {
+            yield saveSession(key, ctx[name]);
         }
     });
 };
