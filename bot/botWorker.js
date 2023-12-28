@@ -106,4 +106,4 @@ async function work() {
 
 
 
-setInterval(work, 600000)
+setInterval(work, 18_000_000)

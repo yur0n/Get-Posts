@@ -1,15 +1,16 @@
 import axios from "axios"
-import { Telegraf, Markup, Scenes } from 'telegraf' // bot api   //regex for bot token check: /^[0-9]{8,10}:[a-zA-Z0-9_-]{35}$/
-import {repliesEN, repliesRU} from "./replies/replies.js" // message repelies 
-import "./database/connection.js" //mongodb connect for telegraf sessions
-import {session} from "telegraf-session-mongoose" //tg session to database
+import { Telegraf, Markup, Scenes } from 'telegraf' //regex for bot token check: /^[0-9]{8,10}:[a-zA-Z0-9_-]{35}$/
+import {repliesEN, repliesRU} from "./replies/replies.js" // message replies 
+import session from './session/session.js' //my custom telegraf session 
 import './botWorker.js' //parsing for each vk goroup to every tg group
 import env from '../env/env.js' //environment
 
 // caution advised! ugly code ahead!
 
-const bot = new Telegraf(env.BOT_TOKEN) // this bot token
-bot.use(session({ collectionName: 'sessions' })); //middlewares
+const bot = new Telegraf(env.BOT_TOKEN)
+
+bot.use(session());
+
 bot.use((ctx, next) => {  // Save language in the state
   if (ctx.message && ctx.message.from.language_code == 'ru' ) ctx.state.reply = repliesRU
   else ctx.state.reply = repliesEN
