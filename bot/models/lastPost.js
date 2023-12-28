@@ -8,6 +8,4 @@ const schema = new mongoose.Schema({
     post: 'number'
 })
 
-const Lastposts = connection.model('lastpost', schema)
-
-export default Lastposts
+export default mongoose.model('lastpost', schema)
